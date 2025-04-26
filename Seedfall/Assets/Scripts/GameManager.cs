@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
+        ManagerInstance = this;
     }
 
     // Update is called once per frame

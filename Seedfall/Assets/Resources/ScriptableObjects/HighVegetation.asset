@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: High
   stateSprite: {fileID: 21300000, guid: 50d9b901345c6b74aa6e45a619006290, type: 3}
+  moneyAmountEffect: 20
+  affectMoneyInterval: 3

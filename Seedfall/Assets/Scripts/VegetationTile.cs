@@ -6,12 +6,11 @@ public class VegetationTile : MonoBehaviour
 {
     [SerializeField] private List<VegetationState> possibleStates = new List<VegetationState>();
     [SerializeField] private VegetationState currentState;
-    [SerializeField] private float affectMoneyInterval;
 
+    private bool isProducingMoney;
     void Start()
     {
         ChangeState("Deforested");
-        StartCoroutine(AffectMoney());
     }
 
     // Update is called once per frame
@@ -24,6 +23,17 @@ public class VegetationTile : MonoBehaviour
     {
         currentState = possibleStates[FindStateIndex(stateName)];
         GetComponent<SpriteRenderer>().sprite = currentState.stateSprite;
+
+        if (currentState.stateName == "Deforested")
+        {
+            isProducingMoney = false;
+            StopCoroutine(AffectMoney());
+        }
+        else
+        {
+            isProducingMoney = true;
+            StartCoroutine(AffectMoney());
+        }
     }
 
     public void UpgradeTile() 
@@ -56,6 +66,9 @@ public class VegetationTile : MonoBehaviour
 
     IEnumerator AffectMoney() 
     {
-        yield return new WaitForSeconds(affectMoneyInterval);
+        while(isProducingMoney) {
+            yield return new WaitForSeconds(currentState.affectMoneyInterval);
+            GameManager.ManagerInstance.gameObject.GetComponent<Money>().amount += currentState.moneyAmountEffect;
+        }
     }
 }
