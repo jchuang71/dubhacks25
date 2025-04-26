@@ -28,7 +28,21 @@ public class VegetationArea : MonoBehaviour
         }
     }
 
-    Vector2 SnapPositionToGrid(Vector2 pos)
+    public GameObject GetTileAtPosition(Vector2 pos)
+    {
+        Vector2 objectPos = SnapPositionToGrid(pos);
+        foreach(GameObject tile in tiles)
+        {
+            if(tile.transform.position.x == objectPos.x && tile.transform.position.y == objectPos.y)
+            {
+                return tile;
+            }
+        }
+
+        return null;
+    }
+
+    public Vector2 SnapPositionToGrid(Vector2 pos)
     {
         return new Vector2(Mathf.Round((pos.x / cellSize) * cellSize), Mathf.Round((pos.y / cellSize) * cellSize));
     }
