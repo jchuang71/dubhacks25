@@ -1,0 +1,3 @@
+Vegetation Area is a grid area of 1x1 cells
+Left click to make a tile deforested
+Cannot interact with anything outside the area
