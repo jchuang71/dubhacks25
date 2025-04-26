@@ -4,15 +4,23 @@ public class VegetationTile : MonoBehaviour
 {
     public enum VegetationLevel { Deforested, Low, Medium, High};
 
-    public VegetationLevel level;
+    [SerializeField] private Sprite lowLevelSprite;
+    [SerializeField] private VegetationLevel level;
+
     void Start()
     {
-        level = VegetationLevel.Low;
+        level = VegetationLevel.Deforested;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
+    public void Deforest()
+    {
+        level = VegetationLevel.Deforested;
+        GetComponent<SpriteRenderer>().sprite = lowLevelSprite;
     }
 }
