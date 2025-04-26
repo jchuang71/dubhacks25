@@ -20,7 +20,7 @@ public class TempPlayer : MonoBehaviour
             
             if(hit.collider.CompareTag("VegetationTile"))
             {
-                hit.collider.GetComponent<VegetationTile>().ChangeState(stateName);
+                hit.collider.GetComponent<VegetationTile>().UpgradeTile();
             }
         }
     }
