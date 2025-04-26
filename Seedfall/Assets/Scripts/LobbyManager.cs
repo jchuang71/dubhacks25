@@ -40,4 +40,26 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             PhotonNetwork.LoadLevel("GameScene"); // Only MasterClient should load the scene
         }
     }
+
+    public override void OnConnectedToMaster()
+    {
+        Debug.Log("Connected to Photon Master Server!");
+    }
+
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        Debug.Log($"Disconnected from Photon: {cause}");
+    }
+
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        Debug.Log($"Failed to join room: {message}");
+    }
+
+    public override void OnCreateRoomFailed(short returnCode, string message)
+    {
+        Debug.Log($"Failed to create room: {message}");
+    }
+
+
 }
