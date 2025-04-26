@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: a930819f2a914cf479f1aa9544fcce36
+guid: ab15568757052864baa297850a6b179a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5739514690864605883
-    second: Player 3 jump_0
+      213: -6746890172533824385
+    second: Player 3 walk_0
   - first:
-      213: -975145015360385756
-    second: Player 3 jump_1
+      213: -5884980570412985836
+    second: Player 3 walk_1
   - first:
-      213: 4697861080069777820
-    second: Player 3 jump_2
+      213: 1081361707133913950
+    second: Player 3 walk_2
   - first:
-      213: -5453865233787239979
-    second: Player 3 jump_3
+      213: -4349105201901483517
+    second: Player 3 walk_3
   - first:
-      213: -7734040007981962657
-    second: Player 3 jump_4
+      213: 850995023376536898
+    second: Player 3 walk_4
+  - first:
+      213: 4140342124746874451
+    second: Player 3 walk_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -151,11 +154,77 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player 3 jump_0
+      name: Player 3 walk_0
       rect:
         serializedVersion: 2
         x: 5
         y: 47
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f742c87722b3e52a0800000000000000
+      internalID: -6746890172533824385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 3 walk_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 47
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4125576e959545ea0800000000000000
+      internalID: -5884980570412985836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 3 walk_2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 23
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b4d6b4eb4c10f00800000000000000
+      internalID: 1081361707133913950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 3 walk_3
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 23
         width: 13
         height: 21
       alignment: 0
@@ -166,85 +235,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 54511e34cc52950b0800000000000000
-      internalID: -5739514690864605883
+      spriteID: 30acbd58cdfd4a3c0800000000000000
+      internalID: -4349105201901483517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player 3 jump_1
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 48
-        width: 14
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42d83fa66c69772f0800000000000000
-      internalID: -975145015360385756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player 3 jump_2
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 25
-        width: 17
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c9921b113c7223140800000000000000
-      internalID: 4697861080069777820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player 3 jump_3
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 23
-        width: 14
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5d14247377aff44b0800000000000000
-      internalID: -5453865233787239979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player 3 jump_4
+      name: Player 3 walk_4
       rect:
         serializedVersion: 2
         x: 5
         y: 0
-        width: 13
+        width: 14
         height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -254,8 +257,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5a6395e69b2ba490800000000000000
-      internalID: -7734040007981962657
+      spriteID: 245dbf907775fcb00800000000000000
+      internalID: 850995023376536898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 3 walk_5
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e9f1ad933757930800000000000000
+      internalID: 4140342124746874451
       vertices: []
       indices: 
       edges: []
@@ -273,12 +298,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Player 3 jump_0: -5739514690864605883
-      Player 3 jump_1: -975145015360385756
-      Player 3 jump_2: 4697861080069777820
-      Player 3 jump_3: -5453865233787239979
-      Player 3 jump_4: -7734040007981962657
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
