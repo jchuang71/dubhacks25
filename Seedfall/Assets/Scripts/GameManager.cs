@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     {
         //PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.Instantiate("Prefabs/Player", new Vector3(0, 0, -1), Quaternion.identity, 0); // Instantiate the player prefab at the origin with no rotation
+        PhotonNetwork.ConnectUsingSettings();
+        ManagerInstance = this;
     }
 
     // Update is called once per frame

@@ -6,4 +6,5 @@ public class VegetationState : ScriptableObject
     public string stateName;
     public Sprite stateSprite;
     public float moneyAmountEffect;
+    public float affectMoneyInterval;
 }
