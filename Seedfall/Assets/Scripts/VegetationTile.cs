@@ -68,7 +68,7 @@ public class VegetationTile : MonoBehaviour
     {
         while(isProducingMoney) {
             yield return new WaitForSeconds(currentState.affectMoneyInterval);
-            GameManager.ManagerInstance.gameObject.GetComponent<Money>().amount += currentState.moneyAmountEffect;
+            GameManager.ManagerInstance.gameObject.GetComponent<Money>().AddAmount(currentState.moneyAmountEffect);
         }
     }
 }

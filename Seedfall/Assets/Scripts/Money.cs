@@ -1,9 +1,11 @@
 using UnityEngine;
+using TMPro;
 
 public class Money : MonoBehaviour
 {
-    public float amount;
-    
+    [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private float amount;
+
     void Start()
     {
         
@@ -13,5 +15,11 @@ public class Money : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AddAmount(float _amount)
+    {
+        amount += _amount;
+        moneyText.text = "Money: " + amount;
     }
 }
