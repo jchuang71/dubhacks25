@@ -1,99 +1,126 @@
 {
     "events": [
         {
-            "event_id": 1,
+            "eventId": 1,
             "title": "Youth Boycotts Slow Furniture Production",
             "text": "A nationwide movement in the United States has led to a boycott of GreenHaus furniture, slowing down their plants' output.",
-            "effect": "Decrease pollution levels by 15%."
+            "pollution": 15,
+            "money": 0,
+            "deforest": 0
         },
         {
-            "event_id": 2,
+            "eventId": 2,
             "title": "New Highway Expected to Spike Emissions",
             "text": "With the grand opening of a new 15-lane highway, local emissions and pollution are expected to increase significantly.",
-            "effect": "Increase pollution levels by 25%."
+            "pollution": 25,
+            "money": 0,
+            "deforest": 0
         },
         {
-            "event_id": 3,
+            "eventId": 3,
             "title": "Popular Online Celebrity Donates To Conservation Efforts",
             "text": "A famous YouTuber known for annual charity events raised thousands of dollars for a conservation group who aim to restore a South American rainforest.",
-            "effect": "Gain 100 Green Points."
+            "pollution": 0,
+            "money": 100,
+            "deforest": 0
         },
         {
-            "event_id": 4,
+            "eventId": 4,
             "title": "GreenHaus Opens New Luxury Furniture Factory",
             "text": "Controversial luxury furniture manufacturer GreenHaus opened a new factory nearby their flagship facility. Critics argue the nearby rainforest will be heavily damaged from the increased pollution.",
-            "effect": "Increase pollution levels by 50%"
+            "pollution": 50,
+            "money": 0,
+            "deforest": 0
         },
         {
-            "event_id": 5,
+            "eventId": 5,
             "title": "Gender Reveal Gone Wrong Starts Wildfire!",
             "text": "A couple celebrating their next child by created a pink-colored bonfire that eventually spread into the nearby rainforest. This is the 45th gender reveal-related wildfire that has occurred this year.",
-            "effect": "A moderate wildfire starts."
+            "pollution": 0,
+            "money": 0,
+            "deforest": 25
         },
         {
-            "event_id": 6,
+            "eventId": 6,
             "title": "Gasoline Tanker Explosion Engulfs Local Rainforest",
             "text": "An gas tanker carrying thousands of gallons of gasoline crashed and later exploded. While nobody was harmed, a fire began to rage in the nearby rainforest.",
-            "effect": "A severe wildfire starts."
-
+            "pollution": 0,
+            "money": 0,
+            "deforest": 50
         },
         {
-            "event_id": 7,
+            "eventId": 7,
             "title": "Downed Powerline Sparks Wildfire",
             "text": "A recent windstorm knocked over a power line last night, which began a fire in the local ",
-            "effect": "A mild wildfire starts."
+            "pollution": 0,
+            "money": 0,
+            "deforest": 10
 
         },
         {
-            "event_id": 8,
+            "eventId": 8,
             "title": "Charity Golf Tournament Winner Donates to Rainforest Conservation",
             "text": "Lionel Forest, the winner of the Golf for Good tournament, donated the $100,000 grand prize to a conservation organization fighting deforestation.",
-            "effect": "Gain 500 Green Points."
-
+            "pollution": 0,
+            "money": 100,
+            "deforest": 0
         },
         {
-            "event_id": 9,
+            "eventId": 9,
             "title": "Worldwide Recession Decreases Manufacturing!",
             "text": "With the stock market's collapse this past Monday, the amount of spending dropped significantly around the world, impacting manufacturing.",
-            "effect": "Pollution levels decrease by 25%, but lose 50% of your Green Points."
-
+            "effect": "Pollution levels decrease by 25%, but lose 50% of your Green Points.",
+            "pollution": 25,
+            "money": -1000,
+            "deforest": 0
         },
         {
-            "event_id": 10,
+            "eventId": 10,
             "title": "New GreenHaus Chair Causes Outrage",
             "text": "Luxury furniture company GreenHaus recently released a new chair made from an endangered species of tree found in the rainforest.",
-            "effect": "Increase pollution levels by 30%."
-
+            "pollution": 30,
+            "money": 0,
+            "deforest": 0
         },
         {
-            "event_id": 11,
+            "eventId": 11,
             "title": "Climate Change Induced Drought Damages Rainforest",
             "text": "A drought is set to descend upon South America this year, exacerbating environmental decline.",
-            "effect": "Increase pollution levels by 50% for one year."
+            "pollution": 50,
+            "money": 0,
+            "deforest": 0
         },
         {
-            "event_id": 12,
+            "eventId": 12,
             "title": "Slow Sales Year Causes Factory Shutdown",
             "text": "A bad sales year for GreenHaus led to a wing of their flagship plant being shut down.",
-            "effect": "Decrease pollution levels by 20%."
+            "pollution": -20,
+            "money": 0,
+            "deforest": 0
         },
         {
-            "event_id": 13,
+            "eventId": 13,
             "title": "Environmental Regulations Tightened by New Legislation",
             "text": "A new set of laws were passed that enforces stronger environmental standards.",
-            "effect": "Decrease pollution levels by 30%."
+            "pollution": -30,
+            "money": 0,
+            "deforest": 0
         },
         {
-            "event_id": 14,
+            "eventId": 14,
             "title": "Environmental Regulations Relaxed by New Legislation",
             "text": "A new set of laws were passed that scales back the enforcement of environmental standards.",
-            "effect": "Increase pollution levels by 30%."
+            "pollution": 30,
+            "money": 0,
+            "deforest": 0
         },
         {
-            "event_id": 15,
+            "eventId": 15,
             "title": "Blockbuster Movie Sparks Massive Donations",
             "text": "A new movie that centers around the decline of the environment caused an influx of donations to organizations protecting the environment.",
-            "effect": "Gain 250 Green Points."
+            "pollution": 0,
+            "money": 250,
+            "deforest": 0
         }
 
     ]
