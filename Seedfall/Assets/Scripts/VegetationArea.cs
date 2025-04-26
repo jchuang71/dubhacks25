@@ -1,52 +1,72 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class VegetationArea : MonoBehaviour
 {
-    [SerializeField] private GameObject tile;
+    public List<GameObject> tiles;
+
+    [SerializeField] private GameObject tilePrefab;
     [SerializeField] private int areaWidth = 5;
     [SerializeField] private int areaHeight = 5;
     [SerializeField] private int cellSize = 1;
 
     private Camera cam;
+
     void Start()
     {
         cam = FindAnyObjectByType<Camera>();
-        transform.localScale = new Vector2(areaWidth, areaHeight);
-    }
 
-    
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+        // Create vegetation area by specified width and height
+        for(int x = 0; x < areaWidth; x++)
         {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-            if(IsPositionWithinBounds(ray.origin))
-                Instantiate(tile, SnapPositionToGrid(ray.origin), Quaternion.identity);
+            for(int y = 0; y < areaHeight; y++)
+            {
+                Vector2 newPos = new Vector2(x + GetXMin() + 0.5f, y + GetYMin() + 0.5f);
+                GameObject newTile = Instantiate(tilePrefab, newPos, Quaternion.identity, transform);
+                tiles.Add(newTile);
+            }
         }
-
     }
 
     Vector2 SnapPositionToGrid(Vector2 pos)
     {
-        Vector2 newPos = new Vector2(Mathf.Round((pos.x / cellSize) * cellSize), Mathf.Round((pos.y / cellSize) * cellSize));
-        return newPos;
+        return new Vector2(Mathf.Round((pos.x / cellSize) * cellSize), Mathf.Round((pos.y / cellSize) * cellSize));
     }
 
     bool IsPositionWithinBounds(Vector2 pos)
     {
-        float xMin = transform.position.x - (areaWidth / 2.0f);
-        float xMax = transform.position.x + (areaWidth / 2.0f);
-        float yMin = transform.position.y - (areaHeight / 2.0f);
-        float yMax = transform.position.y + (areaHeight / 2.0f);
+        return pos.x >= GetXMin() && pos.x <= GetXMax() && pos.y >= GetYMin() && pos.y <= GetYMax();
+    }
 
-        Debug.Log("Xmin: " + xMin);
-        Debug.Log("Xmax: " + xMax);
-        Debug.Log("Ymin: " + yMin);
-        Debug.Log("Ymax: " + yMax);
+    float GetXMin()
+    {
+        return transform.position.x - (areaWidth / 2.0f);
+    }
 
-        if (pos.x >= xMin && pos.x <= xMax && pos.y >= yMin && pos.y <= yMax)
-            return true;
-        return false;
+    float GetXMax()
+    {
+        return transform.position.x + (areaWidth / 2.0f);
+    }
+
+    float GetYMin()
+    {
+        return transform.position.y - (areaHeight / 2.0f);
+    }
+
+    float GetYMax()
+    {
+        return transform.position.y + (areaHeight / 2.0f);
+    }
+
+    // Editor area size visual helper
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLineList(new Vector3[4]
+        {
+            new Vector2(GetXMin(), GetYMin()),
+            new Vector2(GetXMax(), GetYMax()),
+            new Vector2(GetXMin(), GetYMax()),
+            new Vector2(GetXMax(), GetYMin())
+        });
     }
 }
