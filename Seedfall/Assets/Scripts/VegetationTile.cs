@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,10 +6,12 @@ public class VegetationTile : MonoBehaviour
 {
     [SerializeField] private List<VegetationState> possibleStates = new List<VegetationState>();
     [SerializeField] private VegetationState currentState;
+    [SerializeField] private float affectMoneyInterval;
 
     void Start()
     {
-        ChangeState("Low");
+        ChangeState("Deforested");
+        StartCoroutine(AffectMoney());
     }
 
     // Update is called once per frame
@@ -19,21 +22,40 @@ public class VegetationTile : MonoBehaviour
 
     public void ChangeState(string stateName)
     {
-        currentState = FindState(stateName);
+        currentState = possibleStates[FindStateIndex(stateName)];
         GetComponent<SpriteRenderer>().sprite = currentState.stateSprite;
     }
 
-    private VegetationState FindState(string stateName) 
+    public void UpgradeTile() 
     {
-        foreach (VegetationState state in possibleStates) 
+        int currentStateIndex = FindStateIndex(currentState.stateName);
+
+        if (currentState.stateName != "High") 
         {
-            if (state.stateName == stateName)
+            ChangeState(possibleStates[currentStateIndex + 1].stateName);
+        } 
+        else
+        {
+            Debug.Log("Can't upgrade this tile anymore");
+        }
+    }
+
+    private int FindStateIndex(string stateName) 
+    {
+        for (int i = 0; i < possibleStates.Count; i++)
+        {
+            if (possibleStates[i].stateName == stateName)
             {
-                return state;
+                return i;
             }
         }
 
         Debug.Log("Could not find vegetation state");
-        return possibleStates[0]; // just return anything if no state found
+        return 0; // just return anything if no state found
+    }
+
+    IEnumerator AffectMoney() 
+    {
+        yield return new WaitForSeconds(affectMoneyInterval);
     }
 }
