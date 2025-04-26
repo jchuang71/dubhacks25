@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591e8f3de3dc348ba9649b5741620c96, type: 3}
   m_Name: MediumVegetation
   m_EditorClassIdentifier: 
-  stateName: 
-  stateSprite: {fileID: 0}
+  stateName: Medium
+  stateSprite: {fileID: 21300000, guid: 259ef8fb1915e4e48a477c7f3a61a67a, type: 3}

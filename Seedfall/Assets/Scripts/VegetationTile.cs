@@ -17,8 +17,26 @@ public class VegetationTile : MonoBehaviour
         
     }
 
-    public void Deforest()
+    public void ChangeState(string stateName)
     {
+        currentState = FindState(stateName);
         GetComponent<SpriteRenderer>().sprite = currentState.stateSprite;
+    }
+
+    private VegetationState FindState(string stateName) 
+    {
+        foreach (VegetationState state in possibleStates) 
+        {
+            if (state.stateName == stateName)
+            {
+                return state;
+            }
+            else
+            {
+                Debug.Log("Could not find vegetation state");
+            }
+        }
+
+        return possibleStates[0]; // just return anything if no state found
     }
 }

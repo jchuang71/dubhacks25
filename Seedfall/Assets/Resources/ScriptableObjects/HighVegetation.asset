@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591e8f3de3dc348ba9649b5741620c96, type: 3}
   m_Name: HighVegetation
   m_EditorClassIdentifier: 
-  stateName: 
-  stateSprite: {fileID: 0}
+  stateName: High
+  stateSprite: {fileID: 21300000, guid: 50d9b901345c6b74aa6e45a619006290, type: 3}
