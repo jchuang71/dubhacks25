@@ -7,48 +7,78 @@ using TMPro;
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     public TMP_InputField roomNameInput;
+    private bool isConnecting = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        PhotonNetwork.ConnectUsingSettings(); // Connects to Photon cloud
+        // Only connect if we're not already connected
+        if (PhotonNetwork.NetworkClientState == ClientState.Disconnected)
+        {
+            isConnecting = true;
+            PhotonNetwork.ConnectUsingSettings();
+        }
+        else if (PhotonNetwork.IsConnected)
+        {
+            // Already connected, make sure we're in the lobby
+            PhotonNetwork.JoinLobby();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    // if room name is not empty, create a new room with the specified name
     public void JoinOrCreateRoom()
     {
-        if(roomNameInput.text != "" && roomNameInput.text != "Input Room Name")
+        if (string.IsNullOrEmpty(roomNameInput.text) || roomNameInput.text == "Input Room Name")
         {
-            RoomOptions roomOptions = new RoomOptions(); // PLZ ENSURE ROOM HAS CORRECT OPTIONS
-            roomOptions.MaxPlayers = 2;
-            PhotonNetwork.JoinOrCreateRoom(roomNameInput.text, roomOptions, TypedLobby.Default); // Will auto create a room if it doesn't exist
+            Debug.LogWarning("Room name is empty!");
+            return;
         }
-    }
 
-    public override void OnJoinedRoom()
-    {
-        Debug.Log("Joined room: " + PhotonNetwork.CurrentRoom.Name);
-      
-        if (PhotonNetwork.IsMasterClient)
+        // Check if we're connected to the master server
+        if (!PhotonNetwork.IsConnectedAndReady)
         {
-            PhotonNetwork.LoadLevel("GameScene"); // Only MasterClient should load the scene
+            Debug.LogWarning("Not connected to Photon yet!");
+            return;
         }
+
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = 2;
+        roomOptions.IsVisible = true;
+        roomOptions.IsOpen = true;
+
+        PhotonNetwork.JoinOrCreateRoom(roomNameInput.text, roomOptions, TypedLobby.Default);
     }
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to Photon Master Server!");
+
+        // Join the default lobby after connecting to master
+        if (isConnecting)
+        {
+            isConnecting = false;
+            PhotonNetwork.JoinLobby();
+        }
+    }
+
+    public override void OnJoinedLobby()
+    {
+        Debug.Log("Joined Photon Lobby");
+    }
+
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("Joined room: " + PhotonNetwork.CurrentRoom.Name);
+
+        // Load the game scene, automatically synced for all clients
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.LoadLevel("GameScene");
+        }
     }
 
     public override void OnDisconnected(DisconnectCause cause)
     {
         Debug.Log($"Disconnected from Photon: {cause}");
+        isConnecting = false;
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message)
@@ -60,6 +90,4 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         Debug.Log($"Failed to create room: {message}");
     }
-
-
 }

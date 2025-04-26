@@ -6,17 +6,31 @@ using Photon.Realtime;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
-    public static GameManager ManagerInstance; // Singleton reference to this manager object available to all other scripts
+    public static GameManager ManagerInstance;
     public TextMeshProUGUI connectionInfoText;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        PhotonNetwork.ConnectUsingSettings();
+        // Implement singleton pattern
+        if (ManagerInstance == null)
+        {
+            ManagerInstance = this;
+        }
+        else if (ManagerInstance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        // Don't try to connect again if we're already in a game scene
+        if (!PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
+    }
+
     void Update()
     {
         if (connectionInfoText != null)
@@ -29,9 +43,21 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
+    // Add callback for when player enters the room 
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        Debug.Log($"Player {newPlayer.NickName} entered the room!");
+    }
+
+    // Add callback for when player leaves the room
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        Debug.Log($"Player {otherPlayer.NickName} left the room!");
+    }
+
     public override void OnConnectedToMaster()
     {
-        Debug.Log("Connected to Photon Master Server!");
+        Debug.Log("Connected to Master Server from GameManager!");
         if (connectionInfoText != null)
         {
             connectionInfoText.text = "Connected to Master Server";
@@ -46,5 +72,4 @@ public class GameManager : MonoBehaviourPunCallbacks
             connectionInfoText.text = $"Disconnected: {cause}";
         }
     }
-
 }
