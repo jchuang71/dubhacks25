@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using Photon.Pun;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        PhotonNetwork.ConnectUsingSettings();
     }
 
     // Update is called once per frame
