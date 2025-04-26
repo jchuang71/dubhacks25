@@ -47,7 +47,7 @@ public class Player : MonoBehaviourPun
 
     void PlayerMendForest()
     {
-        if(Input.GetKey(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E))
         {
             if(tileStandingOn != null)
             {
