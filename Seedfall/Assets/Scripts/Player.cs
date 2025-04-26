@@ -51,7 +51,7 @@ public class Player : MonoBehaviourPun
         {
             if(tileStandingOn != null)
             {
-                tileStandingOn.GetComponent<VegetationTile>().ChangeState("High"); // Change the state of the tile to "Low"
+                tileStandingOn.GetComponent<VegetationTile>().UpgradeTile(); // Change the state of the tile to "Low"
             }
         }
     }
