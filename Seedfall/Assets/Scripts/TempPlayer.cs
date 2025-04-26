@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TempPlayer : MonoBehaviour
 {
+    [SerializeField] private string stateName;
 
     private Camera cam;
     
@@ -19,7 +20,7 @@ public class TempPlayer : MonoBehaviour
 
             if(hit.collider.CompareTag("VegetationTile"))
             {
-                hit.collider.GetComponent<VegetationTile>().Deforest();
+                hit.collider.GetComponent<VegetationTile>().ChangeState(stateName);
             }
         }
     }
