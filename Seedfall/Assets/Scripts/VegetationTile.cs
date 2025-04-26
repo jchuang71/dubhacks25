@@ -1,15 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class VegetationTile : MonoBehaviour
 {
-    public enum VegetationLevel { Deforested, Low, Medium, High};
-
-    [SerializeField] private Sprite lowLevelSprite;
-    [SerializeField] private VegetationLevel level;
+    [SerializeField] private List<VegetationState> possibleStates = new List<VegetationState>();
+    [SerializeField] private VegetationState currentState;
 
     void Start()
     {
-        level = VegetationLevel.Deforested;
+
     }
 
     // Update is called once per frame
@@ -20,7 +19,6 @@ public class VegetationTile : MonoBehaviour
 
     public void Deforest()
     {
-        level = VegetationLevel.Deforested;
-        GetComponent<SpriteRenderer>().sprite = lowLevelSprite;
+        GetComponent<SpriteRenderer>().sprite = currentState.stateSprite;
     }
 }
