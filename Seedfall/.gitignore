@@ -56,6 +56,14 @@ ExportedObj/
 # Unity3D generated file on crash reports
 sysinfo.txt
 
+# === Photon (safe to ignore) ===
+Assets/Photon/PhotonUnityNetworking/Demos/
+Assets/Photon/PhotonLibs/websocket-sharp.dll.meta
+Assets/Photon/PhotonLibs/websocket-sharp.dll
+
+# Optional: ignore Photon settings if you want per-dev config
+#Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset
+
 # Builds
 *.apk
 *.aab
