@@ -5,7 +5,7 @@ using ExitGames.Client.Photon.StructWrapping; // Import the Photon Unity Network
 public class Player : MonoBehaviourPun
 {
     float speed = 5f; // Speed of the player movement
-    public VegetationArea vegetationArea; // Reference to the VegetationArea script
+    // public VegetationArea vegetationArea; // Reference to the VegetationArea script
     public GameObject tileStandingOn; // Reference to the tile the player is standing on
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -49,16 +49,11 @@ public class Player : MonoBehaviourPun
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
+            tileStandingOn = GameManager.ManagerInstance.vegetationArea.GetTileAtPosition(transform.position);
             if(tileStandingOn != null)
             {
                 tileStandingOn.GetComponent<VegetationTile>().UpgradeTile(); // Change the state of the tile to "Low"
             }
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Player collided with: " + collision.gameObject.name); // Log the name of the collided object
-        tileStandingOn = collision.gameObject;
     }
 }
