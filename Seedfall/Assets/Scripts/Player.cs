@@ -8,12 +8,6 @@ public class Player : MonoBehaviourPun
     public VegetationArea vegetationArea; // Reference to the VegetationArea script
     public GameObject tileStandingOn; // Reference to the tile the player is standing on
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -43,6 +37,10 @@ public class Player : MonoBehaviourPun
         {
             transform.Translate(new Vector2(1,0) * Time.deltaTime * speed); // Move right
         }
+        else if(Input.GetKeyDown(KeyCode.M))
+        {
+            GameObject.Find("UpgradeMenuManager").GetComponent<UpgradeMenuBehavior>().ToggleMenu(); // Toggle the upgrade menu
+        }    
     }
 
     void PlayerMendForest()
