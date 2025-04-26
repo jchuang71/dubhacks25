@@ -8,7 +8,7 @@ public class VegetationTile : MonoBehaviour
 
     void Start()
     {
-
+        ChangeState("Low");
     }
 
     // Update is called once per frame
