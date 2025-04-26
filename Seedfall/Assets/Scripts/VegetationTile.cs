@@ -31,12 +31,9 @@ public class VegetationTile : MonoBehaviour
             {
                 return state;
             }
-            else
-            {
-                Debug.Log("Could not find vegetation state");
-            }
         }
 
+        Debug.Log("Could not find vegetation state");
         return possibleStates[0]; // just return anything if no state found
     }
 }
