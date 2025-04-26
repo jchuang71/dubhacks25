@@ -64,6 +64,14 @@ Assets/Photon/PhotonLibs/websocket-sharp.dll
 # Optional: ignore Photon settings if you want per-dev config
 #Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset
 
+# === TextMeshPro (Essentials safe to commit) ===
+# TMP essentials are under:
+Assets/TextMesh Pro/Resources/*
+!Assets/TextMesh Pro/Resources/Fonts & Materials/
+
+# Keep TMP Settings if needed
+!Assets/TextMesh Pro/TMP Settings.asset
+
 # Builds
 *.apk
 *.aab
