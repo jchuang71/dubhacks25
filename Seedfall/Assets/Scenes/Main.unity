@@ -342,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a927af91951b247aaed712b327cc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vegetationArea: {fileID: 269452293}
 --- !u!4 &386830606
 Transform:
   m_ObjectHideFlags: 0
