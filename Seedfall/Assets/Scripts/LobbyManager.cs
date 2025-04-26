@@ -37,7 +37,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
       
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.LoadLevel("GameScene"); // Only MasterClient should load the scene
+            PhotonNetwork.LoadLevel("Main"); // Only MasterClient should load the scene
         }
     }
 }
