@@ -7,6 +7,9 @@ This game was built for the 2025 UWBHacks Hackathon.
 
 **Controls**
 WASD - Move
+
 E - Reforest
+
 M - Upgrade Menu
+
 Left Click - Select
