@@ -20,7 +20,7 @@ public class Money : MonoBehaviour
     public void AddAmount(float _amount)
     {
         amount += _amount;
-        moneyText.text = "Money: " + amount;
+        moneyText.text = "Money: " + (int) amount;
     }
 
     public float GetAmount()
