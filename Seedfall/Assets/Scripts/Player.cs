@@ -5,7 +5,7 @@ using NUnit.Framework; // Import the Photon Unity Networking namespace
 
 public class Player : MonoBehaviourPun
 {
-    float speed = 5f; // Speed of the player movement
+    //float speed = 5f; // Speed of the player movement
     // public VegetationArea vegetationArea; // Reference to the VegetationArea script
     public GameObject tileStandingOn; // Reference to the tile the player is standing on
     public int currentSprite = 0; // Index of the current sprite
@@ -45,7 +45,7 @@ public class Player : MonoBehaviourPun
     void PlayerMovement()
     {
         isWalking=false; // Reset the walking flag to false
-        if(Input.GetKey(KeyCode.W))
+        float speed = GameManager.ManagerInstance.playerMoveSpeed; // Get the player move speed from the GameManager
         {
             transform.Translate(new Vector2(0,1) * Time.deltaTime * speed); // Move up
             SetSpriteToWalk(); // Set the sprite to walking animation
