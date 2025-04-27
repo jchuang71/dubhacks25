@@ -11,8 +11,23 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     string userName = "Player"; // Default username for the player
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    private void Start()
+    {
+        // Set the initial text in the input field to the default userName
+        if (userNameInputField != null)
+        {
+            userNameInputField.text = userName;
+        }
+    }
+
     public void OnClickConnectToServer()
     {
+
+        if (!string.IsNullOrEmpty(userNameInputField.text))
+        {
+            userName = userNameInputField.text;
+        }
+
         PhotonNetwork.NickName = userName; // Set the player's nickname to the default username
         connectButtonText.text = "Connecting..."; // Change the button text to indicate connection in progress
         Debug.Log("directly before connecting awaiting connect...");
