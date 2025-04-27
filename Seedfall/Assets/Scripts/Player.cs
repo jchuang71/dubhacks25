@@ -15,6 +15,7 @@ public class Player : MonoBehaviourPun
     public Sprite[] idleSprites = new Sprite[7]; // Array to hold the idle sprites
     public Sprite[] walkSprites = new Sprite[6]; // Array to hold the walking sprites
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -70,10 +71,6 @@ public class Player : MonoBehaviourPun
         {
             SetSpriteToIdle(); // Set the sprite to idle animation
         }
-        else if(Input.GetKeyDown(KeyCode.M))
-        {
-            GameObject.Find("UpgradeMenuManager").GetComponent<UpgradeMenuBehavior>().ToggleMenu(); // Toggle the upgrade menu
-        }    
     }
 
     void PlayerMendForest()
