@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DeforestedVegetation
   m_EditorClassIdentifier: 
   stateName: Deforested
-  stateSprite: {fileID: 21300000, guid: db3b81b66d230b84f89d8ea677a1078c, type: 3}
+  stateSprite: {fileID: 21300000, guid: 1c0c75ac32af44e45b2f3b4fda3060ca, type: 3}
   moneyAmountEffect: 0
   affectMoneyInterval: 3

@@ -85,12 +85,6 @@ public class Player : MonoBehaviourPun
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Player collided with: " + collision.gameObject.name); // Log the name of the collided object
-        tileStandingOn = collision.gameObject;
-    }
-
     void SetSpriteToWalk()
     {
         isWalking = true; // Set the walking flag to true
