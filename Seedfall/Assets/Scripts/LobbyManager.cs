@@ -7,9 +7,13 @@ using UnityEngine.SceneManagement;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
+using ExitGames.Client.Photon;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
+
+    public GameObject playButton;
+
     //public GameObject playersPanel;
     public TMP_Text player1Text;
     public TMP_Text player2Text;
@@ -55,12 +59,32 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         PhotonNetwork.CreateRoom(roomInputField.text, new RoomOptions() { MaxPlayers = 2 });
     }
 
+    public void OnClickPlay()
+    {
+        Debug.Log("Play button clicked"); // ADDED: Debug log
+
+        // Always load the Game scene
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Debug.Log("Master client loading level for all players"); // ADDED: Debug info
+            PhotonNetwork.LoadLevel("Game");
+        }
+        else
+        {
+            Debug.Log("Non-master client loading scene locally"); // ADDED: Debug info
+            SceneManager.LoadScene("Game");
+        }
+
+    }
+
+
     public override void OnJoinedRoom()
     {
         lobbyPanel.SetActive(false);
         roomsList.SetActive(false);
         roomPanel.SetActive(true);
         leaveButton.SetActive(true);
+        playButton.SetActive(true);
         //playersPanel.SetActive(true);
         roomName.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name +
                          " (" + PhotonNetwork.CurrentRoom.PlayerCount + "/" +
@@ -135,7 +159,18 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
+        Debug.Log("Connected to Master Server in Lobby scene");
         PhotonNetwork.JoinLobby();
+    }
+
+    public override void OnJoinedLobby()
+    {
+        Debug.Log("Joined lobby successfully"); // ADDED: Debug info
+                                                // Make sure UI is in the right state when rejoining lobby
+        lobbyPanel.SetActive(true);
+        roomsList.SetActive(true);
+        roomPanel.SetActive(false);
+        leaveButton.SetActive(false);
     }
 
     private void UpdatePlayerList()
