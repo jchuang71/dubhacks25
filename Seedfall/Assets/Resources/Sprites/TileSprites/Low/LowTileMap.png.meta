@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a35fd243986e99a44aa71517447b1525
+guid: b3fd62831de157a4695e60cf3742d1db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5842278912127750392
-    second: Medium4_0
+      213: -398367738639189340
+    second: LowTileMap_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +126,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Medium4_0
+      name: LowTileMap_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 400
-        height: 400
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8f0512487b1f31150800000000000000
-      internalID: 5842278912127750392
+      spriteID: edd874d10f8e2424991a7af3f6a37171
+      internalID: -1881455980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LowTileMap_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 086b80f66d8e8f846a291d7f4664541b
+      internalID: -659574276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LowTileMap_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3472d62fdf81c340bf9e93838b94212
+      internalID: 767992287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LowTileMap_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f96235a7353294fbabc4cf2b117dd8
+      internalID: 401108338
       vertices: []
       indices: 
       edges: []
@@ -151,7 +217,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8ce067736bbffbf42ace57a853fa6ecd
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +227,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Medium4_0: 5842278912127750392
+      LowTileMap_0: -1881455980
+      LowTileMap_1: -659574276
+      LowTileMap_2: 767992287
+      LowTileMap_3: 401108338
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
