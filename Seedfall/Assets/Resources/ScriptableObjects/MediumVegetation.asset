@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: MediumVegetation
   m_EditorClassIdentifier: 
   stateName: Medium
-  stateSprite: {fileID: 21300000, guid: 259ef8fb1915e4e48a477c7f3a61a67a, type: 3}
+  stateSprites:
+  - {fileID: -467986658, guid: e93107bda50483945b44d09fe3cb0591, type: 3}
+  - {fileID: -696052473, guid: e93107bda50483945b44d09fe3cb0591, type: 3}
+  - {fileID: -1880622340, guid: e93107bda50483945b44d09fe3cb0591, type: 3}
+  - {fileID: -621333356, guid: e93107bda50483945b44d09fe3cb0591, type: 3}
   moneyCostToUpgrade: 30
   moneyAmountEffect: 0.5
   affectMoneyInterval: 3

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: HighVegetation
   m_EditorClassIdentifier: 
   stateName: High
-  stateSprite: {fileID: 21300000, guid: 50d9b901345c6b74aa6e45a619006290, type: 3}
+  stateSprites:
+  - {fileID: 21300000, guid: 4ddea0194dd079e4b912a232d1f4810e, type: 3}
   moneyCostToUpgrade: 0
   moneyAmountEffect: 1
   affectMoneyInterval: 3
