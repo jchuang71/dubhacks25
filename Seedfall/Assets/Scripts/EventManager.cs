@@ -42,7 +42,13 @@ public class EventManager : MonoBehaviour
             AdjustMoney(currentEvent);
             DeforestTiles(currentEvent);
 
-            GameManager.ManagerInstance.GetComponent<BannerNotification>().ShowBanner(currentEvent.title + "\n" + currentEvent.text);
+            Color textColor;
+            if (currentEvent.type == "bad")
+                textColor = new Color(1, 0.5f, 0.5f, 1);
+            else
+                textColor = new Color(0.5f, 1, 0.5f, 1);
+
+            GameManager.ManagerInstance.GetComponent<BannerNotification>().ShowBanner(currentEvent.title, currentEvent.effect, textColor);
         }
     }
 

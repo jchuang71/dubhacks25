@@ -5,9 +5,9 @@ using UnityEngine;
 [Serializable]
 public class EventData
 {
+    public string type;
     public int eventId;
     public string title;
-    public string text;
     public string effect;
     public float pollution;
     public float money;
