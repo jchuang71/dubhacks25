@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager ManagerInstance; // Singleton reference to this manager object available to all other scripts
     public VegetationArea vegetationArea;
+    public UpgradeMenuBehavior upgradeMenuBehavior;
+
     public float pollutionInterval = 2.0f;
     //public GameObject playerPrefab; // Reference to the player prefab
 
@@ -16,7 +18,9 @@ public class GameManager : MonoBehaviour
         //PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.Instantiate("Prefabs/Player", new Vector3(0, 0, -1), Quaternion.identity, 0); // Instantiate the player prefab at the origin with no rotation
-        ManagerInstance = this;
+
+        if (ManagerInstance == null)
+            ManagerInstance = this;
 
         StartCoroutine(Pollution());
     }
@@ -24,7 +28,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            upgradeMenuBehavior.GetComponent<UpgradeMenuBehavior>().ToggleMenu();
+        }
     }
 
     IEnumerator Pollution() {
