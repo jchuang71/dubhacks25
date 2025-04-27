@@ -21,7 +21,7 @@ public class VegetationArea : MonoBehaviour
         {
             for(int y = 0; y < areaHeight; y++)
             {
-                Vector2 newPos = new Vector2(x + GetXMin() + 0.5f, y + GetYMin() + 0.5f);
+                Vector2 newPos = new Vector2(x + GetXMin(), y + GetYMin());
                 GameObject newTile = Instantiate(tilePrefab, newPos, Quaternion.identity, transform);
                 tiles.Add(newTile);
             }
@@ -39,6 +39,7 @@ public class VegetationArea : MonoBehaviour
             }
         }
 
+        Debug.Log("No tile found");
         return null;
     }
 
