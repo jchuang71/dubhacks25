@@ -41,7 +41,7 @@ public class Money : MonoBehaviour
         if (amount >= _amount)
         {
             amount -= _amount;
-            moneyText.text = "Money: " + amount;
+            moneyText.text = "Money: " + (int) amount;
             return true;
         }
         else

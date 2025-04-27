@@ -46,6 +46,8 @@ public class Player : MonoBehaviourPun
     {
         isWalking=false; // Reset the walking flag to false
         float speed = GameManager.ManagerInstance.playerMoveSpeed; // Get the player move speed from the GameManager
+
+        if(Input.GetKey(KeyCode.W))
         {
             transform.Translate(new Vector2(0,1) * Time.deltaTime * speed); // Move up
             SetSpriteToWalk(); // Set the sprite to walking animation

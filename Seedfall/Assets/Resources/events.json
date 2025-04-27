@@ -119,7 +119,7 @@
         "deforest": 0
       },
       {
-        "type": "good",
+        "type": "bad",
         "eventId": 14,
         "title": "Environmental Regulations Relaxed by New Legislation",
         "effect": "Increase pollution levels by 30%",

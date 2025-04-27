@@ -725,7 +725,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vegetationArea: {fileID: 269452293}
   upgradeMenuBehavior: {fileID: 1642986603}
-  pollutionInterval: 2
+  playerMoveSpeed: 5
+  pollutionInterval: 5
 --- !u!4 &386830606
 Transform:
   m_ObjectHideFlags: 0
@@ -3587,7 +3588,7 @@ MonoBehaviour:
   technologyButton: {fileID: 1373589213}
   legislationButton: {fileID: 1217058148}
   fundraisingCost: 500
-  technologyCost: 500
+  technologyCost: 200
   legislationCost: 500
   fundraisingCostText: {fileID: 1660817610}
   technologyCostText: {fileID: 245499436}

@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager ManagerInstance; // Singleton reference to this manager object available to all other scripts
     public VegetationArea vegetationArea;
     public UpgradeMenuBehavior upgradeMenuBehavior;
+
     public float playerMoveSpeed = 5.0f;
-    public float pollutionInterval = 2.0f;
+    public float pollutionInterval = 5.0f;
     //public GameObject playerPrefab; // Reference to the player prefab
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

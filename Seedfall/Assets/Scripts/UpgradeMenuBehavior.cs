@@ -106,7 +106,7 @@ public class UpgradeMenuBehavior : MonoBehaviour
 
         //Update the upgrade text to show the selected upgrade
 
-        upgradeText.text = "Decrease pollution by " + (legislationLevel + 1) * 20 + "%";
+        upgradeText.text = "Decrease pollution by " + (legislationLevel + 1) * 10 + "%";
     }
 
     public void ConfirmUpgrade()
@@ -156,6 +156,8 @@ public class UpgradeMenuBehavior : MonoBehaviour
                 upgradeText.text = "Upgrade purchased!";
                 //Update the scrollbar size
                 technologyScrollbar.size = (float)technologyLevel / maxLevel;
+
+                GameManager.ManagerInstance.playerMoveSpeed *= 1.2f; 
             }
             else
             {
@@ -179,6 +181,8 @@ public class UpgradeMenuBehavior : MonoBehaviour
                 upgradeText.text = "Upgrade purchased!";
                 //Update the scrollbar size
                 legislationScrollbar.size = (float)legislationLevel / maxLevel;
+
+                GameManager.ManagerInstance.pollutionInterval += (legislationLevel * 10);
             }
             else
             {
