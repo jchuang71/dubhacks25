@@ -28,6 +28,7 @@ public class VegetationTile : MonoBehaviour
         if (currentState != null && currentState.stateName == stateName)
             return;
 
+        VegetationState prevState = currentState;
         currentState = possibleStates[FindStateIndex(stateName)];
         Sprite randomSprite = currentState.stateSprites[Random.Range(0, currentState.stateSprites.Count)];
         GetComponent<SpriteRenderer>().sprite = randomSprite;
@@ -35,10 +36,13 @@ public class VegetationTile : MonoBehaviour
         if (currentState.stateName == "Deforested")
         {
             isProducingMoney = false;
-            highTiles = Mathf.Max(0, highTiles - 1);
             deforestedTiles++;
             GameManager.ManagerInstance.tilesTextPanel.transform.Find("DeforestedText").GetComponent<TextMeshProUGUI>().text = "Deforested Tiles: " + deforestedTiles;
-            GameManager.ManagerInstance.tilesTextPanel.transform.Find("HighVegetationText").GetComponent<TextMeshProUGUI>().text = "High Vegetation Tiles: " + highTiles;
+            if(prevState.stateName == "High")
+            {
+                highTiles = Mathf.Max(0, highTiles - 1);
+                GameManager.ManagerInstance.tilesTextPanel.transform.Find("HighVegetationText").GetComponent<TextMeshProUGUI>().text = "High Vegetation Tiles: " + highTiles;
+            }
 
             // Lose condition when 80% of area is deforested
             if (GameManager.ManagerInstance.deforestedTilesToLose == deforestedTiles)

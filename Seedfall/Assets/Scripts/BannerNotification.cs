@@ -44,7 +44,7 @@ public class BannerNotification : MonoBehaviour
         {
             titleText.color = new Color(titleText.color.r, titleText.color.g, titleText.color.b, titleText.color.a + (Time.deltaTime / fadeTime));
             effectText.color = new Color(effectText.color.r, effectText.color.g, effectText.color.b, effectText.color.a + (Time.deltaTime / fadeTime));
-            panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, panel.color.a + (Time.deltaTime / fadeTime));
+            panel.color = new Color(panel.color.r, panel.color.g, panel.color.b, Mathf.Min(0.8f, panel.color.a + (Time.deltaTime / fadeTime)));
             yield return null;
         }
 
