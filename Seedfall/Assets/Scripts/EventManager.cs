@@ -9,7 +9,7 @@ public class EventManager : MonoBehaviour
     [SerializeField] private float randomEventIntervalMin;
     [SerializeField] private float randomEventIntervalMax;
 
-    private bool eventsEnabled;
+    public bool eventsEnabled;
     void Start()
     {
         TextAsset jsonText = Resources.Load<TextAsset>("events");

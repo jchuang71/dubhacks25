@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class VegetationTile : MonoBehaviour
 {
+    public static int highTiles;
+    public static int deforestedTiles;
+
     [SerializeField] private List<VegetationState> possibleStates = new List<VegetationState>();
     [SerializeField] private VegetationState currentState;
 
@@ -21,6 +25,9 @@ public class VegetationTile : MonoBehaviour
 
     public void ChangeState(string stateName)
     {
+        if (currentState != null && currentState.stateName == stateName)
+            return;
+
         currentState = possibleStates[FindStateIndex(stateName)];
         Sprite randomSprite = currentState.stateSprites[Random.Range(0, currentState.stateSprites.Count)];
         GetComponent<SpriteRenderer>().sprite = randomSprite;
@@ -28,7 +35,32 @@ public class VegetationTile : MonoBehaviour
         if (currentState.stateName == "Deforested")
         {
             isProducingMoney = false;
+            highTiles = Mathf.Max(0, highTiles - 1);
+            deforestedTiles++;
+            GameManager.ManagerInstance.tilesTextPanel.transform.Find("DeforestedText").GetComponent<TextMeshProUGUI>().text = "Deforested Tiles: " + deforestedTiles;
+            GameManager.ManagerInstance.tilesTextPanel.transform.Find("HighVegetationText").GetComponent<TextMeshProUGUI>().text = "High Vegetation Tiles: " + highTiles;
+
+            // Lose condition when 80% of area is deforested
+            if (GameManager.ManagerInstance.deforestedTilesToLose == deforestedTiles)
+            {
+                GameManager.ManagerInstance.GameFinished("Lose");
+            }
+
             StopCoroutine(AffectMoney());
+        }
+
+        else if(currentState.stateName == "High")
+        {
+            isProducingMoney = true;
+            highTiles++;
+            GameManager.ManagerInstance.tilesTextPanel.transform.Find("HighVegetationText").GetComponent<TextMeshProUGUI>().text = "High Vegetation Tiles: " + highTiles;
+
+            if (GameManager.ManagerInstance.highTilesToWin == highTiles)
+            {
+                GameManager.ManagerInstance.GameFinished("Win");
+            }
+
+            StartCoroutine(AffectMoney());
         }
         else
         {
