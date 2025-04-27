@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: Low
   stateSprites:
-  - {fileID: -4152749801147618400, guid: 96de349a791f96946be7c5d506422bf6, type: 3}
-  - {fileID: 1929016407, guid: 96de349a791f96946be7c5d506422bf6, type: 3}
-  - {fileID: -1618084966, guid: 96de349a791f96946be7c5d506422bf6, type: 3}
-  - {fileID: 1480644949, guid: 96de349a791f96946be7c5d506422bf6, type: 3}
+  - {fileID: 7538761187160823552, guid: e0932a5ab8ea53e40bfbb8da077599c8, type: 3}
+  - {fileID: 1086005116842463706, guid: d2f4b6a1276616b409856753ab29a272, type: 3}
+  - {fileID: -8020740255711775571, guid: d2aa3fc250ac32a47a2d588e8d09073e, type: 3}
+  stateSprite: {fileID: 0}
   moneyCostToUpgrade: 10
   moneyAmountEffect: 0.1
   affectMoneyInterval: 3

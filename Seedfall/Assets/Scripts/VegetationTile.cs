@@ -22,7 +22,7 @@ public class VegetationTile : MonoBehaviour
     public void ChangeState(string stateName)
     {
         currentState = possibleStates[FindStateIndex(stateName)];
-        Sprite randomSprite = currentState.stateSprites[Random.Range(0, currentState.stateSprites.Count - 1)];
+        Sprite randomSprite = currentState.stateSprites[Random.Range(0, currentState.stateSprites.Count)];
         GetComponent<SpriteRenderer>().sprite = randomSprite;
 
         if (currentState.stateName == "Deforested")
@@ -42,7 +42,7 @@ public class VegetationTile : MonoBehaviour
         int currentStateIndex = FindStateIndex(currentState.stateName);
         if (currentState.stateName != "High") 
         {
-            if (GameManager.ManagerInstance.GetComponent<Money>().payAmount(currentState.moneyCostToUpgrade) == false) 
+            if (GameManager.ManagerInstance.GetComponent<Money>().PayAmount(currentState.moneyCostToUpgrade) == false) 
             {
                 Debug.Log("Not enough money to upgrade this tile");
                 return false;

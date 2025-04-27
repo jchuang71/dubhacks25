@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: Medium
   stateSprites:
-  - {fileID: -467986658, guid: e93107bda50483945b44d09fe3cb0591, type: 3}
-  - {fileID: -696052473, guid: e93107bda50483945b44d09fe3cb0591, type: 3}
-  - {fileID: -1880622340, guid: e93107bda50483945b44d09fe3cb0591, type: 3}
-  - {fileID: -621333356, guid: e93107bda50483945b44d09fe3cb0591, type: 3}
+  - {fileID: 9095631116070433348, guid: 3beaee639bde1d34bb19287e821a8b63, type: 3}
+  - {fileID: 11380837956786353, guid: 7ea4078568e87c647873802c928b3acd, type: 3}
+  stateSprite: {fileID: 0}
   moneyCostToUpgrade: 30
   moneyAmountEffect: 0.5
   affectMoneyInterval: 3
