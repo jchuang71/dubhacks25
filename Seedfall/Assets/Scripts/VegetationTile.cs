@@ -10,7 +10,7 @@ public class VegetationTile : MonoBehaviour
     private bool isProducingMoney;
     void Start()
     {
-        ChangeState("Deforested");
+        ChangeState("Low");
     }
 
     // Update is called once per frame
