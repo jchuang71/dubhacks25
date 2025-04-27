@@ -15,5 +15,6 @@ MonoBehaviour:
   stateName: High
   stateSprites:
   - {fileID: 21300000, guid: 4ddea0194dd079e4b912a232d1f4810e, type: 3}
-  moneyAmountEffect: 20
+  moneyCostToUpgrade: 0
+  moneyAmountEffect: 1
   affectMoneyInterval: 3

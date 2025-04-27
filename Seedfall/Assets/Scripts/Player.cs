@@ -1,6 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
-using ExitGames.Client.Photon.StructWrapping; // Import the Photon Unity Networking namespace
+using ExitGames.Client.Photon.StructWrapping;
+using NUnit.Framework; // Import the Photon Unity Networking namespace
 
 public class Player : MonoBehaviourPun
 {
@@ -43,33 +44,28 @@ public class Player : MonoBehaviourPun
 
     void PlayerMovement()
     {
+        isWalking=false; // Reset the walking flag to false
         if(Input.GetKey(KeyCode.W))
         {
             transform.Translate(new Vector2(0,1) * Time.deltaTime * speed); // Move up
             SetSpriteToWalk(); // Set the sprite to walking animation
         }
-        else if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey(KeyCode.A))
         {
             transform.Translate(new Vector2(-1,0) * Time.deltaTime * speed); // Move left
             SetSpriteToWalk(); // Set the sprite to walking animation
-            if(gameObject.GetComponent<SpriteRenderer>().flipX == false) // Check if the sprite is not flipped
-                gameObject.GetComponent<SpriteRenderer>().flipX = true; // Flip the sprite to face left
+            gameObject.GetComponent<SpriteRenderer>().flipX = true; // Flip the sprite to face left
         }
-        else if(Input.GetKey(KeyCode.S))
+        if(Input.GetKey(KeyCode.S))
         {
             transform.Translate(new Vector2(0,-1) * Time.deltaTime * speed); // Move down
             SetSpriteToWalk(); // Set the sprite to walking animation
         }
-        else if(Input.GetKey(KeyCode.D))
+        if(Input.GetKey(KeyCode.D))
         {
             transform.Translate(new Vector2(1,0) * Time.deltaTime * speed); // Move right
             SetSpriteToWalk(); // Set the sprite to walking animation
-            if(gameObject.GetComponent<SpriteRenderer>().flipX == true) // Check if the sprite is flipped
-                gameObject.GetComponent<SpriteRenderer>().flipX = false; // Flip the sprite to face right
-        }
-        else
-        {
-            SetSpriteToIdle(); // Set the sprite to idle animation
+            gameObject.GetComponent<SpriteRenderer>().flipX = false; // Flip the sprite to face right
         }
     }
 
@@ -80,7 +76,7 @@ public class Player : MonoBehaviourPun
             tileStandingOn = GameManager.ManagerInstance.vegetationArea.GetTileAtPosition(transform.position);
             if(tileStandingOn != null)
             {
-                tileStandingOn.GetComponent<VegetationTile>().UpgradeTile(); // Change the state of the tile to "Low"
+                bool success = tileStandingOn.GetComponent<VegetationTile>().UpgradeTile();
             }
         }
     }

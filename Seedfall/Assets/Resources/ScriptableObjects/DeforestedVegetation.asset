@@ -18,5 +18,6 @@ MonoBehaviour:
   - {fileID: -97681854, guid: 1c0c75ac32af44e45b2f3b4fda3060ca, type: 3}
   - {fileID: -1187935025, guid: 1c0c75ac32af44e45b2f3b4fda3060ca, type: 3}
   - {fileID: -1235467021, guid: 1c0c75ac32af44e45b2f3b4fda3060ca, type: 3}
+  moneyCostToUpgrade: 5
   moneyAmountEffect: 0
   affectMoneyInterval: 3

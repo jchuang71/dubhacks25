@@ -37,17 +37,23 @@ public class VegetationTile : MonoBehaviour
         }
     }
 
-    public void UpgradeTile() 
+    public bool UpgradeTile() 
     {
         int currentStateIndex = FindStateIndex(currentState.stateName);
-
         if (currentState.stateName != "High") 
         {
+            if (GameManager.ManagerInstance.GetComponent<Money>().payAmount(currentState.moneyCostToUpgrade) == false) 
+            {
+                Debug.Log("Not enough money to upgrade this tile");
+                return false;
+            }
             ChangeState(possibleStates[currentStateIndex + 1].stateName);
+            return true;
         } 
         else
         {
             Debug.Log("Can't upgrade this tile anymore");
+            return false;
         }
     }
 
