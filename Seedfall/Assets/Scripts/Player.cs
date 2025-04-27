@@ -67,11 +67,6 @@ public class Player : MonoBehaviourPun
             if(gameObject.GetComponent<SpriteRenderer>().flipX == true) // Check if the sprite is flipped
                 gameObject.GetComponent<SpriteRenderer>().flipX = false; // Flip the sprite to face right
         }
-        else if(Input.GetKeyDown(KeyCode.M))
-        {
-            //Run toggle menu function from Upgrade Menu Behavior
-            GetComponent<UpgradeMenuBehavior>().ToggleMenu();
-        }
         else
         {
             SetSpriteToIdle(); // Set the sprite to idle animation
@@ -112,7 +107,7 @@ public class Player : MonoBehaviourPun
 
     void CycleSprites()
     {
-        if(isWalking) // Check if the player is walking
+        if (isWalking) // Check if the player is walking
         {
             // Move to the next sprite
             currentSprite = (currentSprite + 1) % walkSprites.Length;
