@@ -11,4 +11,9 @@ public class Money : MonoBehaviour
         amount += _amount;
         moneyText.text = "Money: " + amount;
     }
+    
+    public float GetAmount()
+    {
+        return amount;
+    }
 }
