@@ -18,6 +18,11 @@ public class UpgradeMenuBehavior : MonoBehaviour
     public int technologyLevel;
     public int legislationLevel;
 
+    //Upgrade buttons
+    public Button fundraisingButton;
+    public Button technologyButton;
+    public Button legislationButton;
+
     //Costs of upgrades
     public int fundraisingCost;
     public int technologyCost;
@@ -109,16 +114,73 @@ public class UpgradeMenuBehavior : MonoBehaviour
         {
             if(fundraisingCost <= money.GetAmount())
             {
+                //Apply upgrades
+                //Adjust values
                 fundraisingLevel++;
                 money.AddAmount(-fundraisingCost);
-                fundraisingCost += 10;
+                fundraisingCost *= 2;
+                //Check if the level is maxed out
                 if (fundraisingLevel >= maxLevel)
                 {
-                    fundraisingLevel = maxLevel;
-                    fundraisingCost = 0;
+                    fundraisingButton.gameObject.SetActive(false);
                 }
+                upgradeText.text = "Upgrade purchased!";
+                //Update the scrollbar size
+                fundraisingScrollbar.size = (float)fundraisingLevel / maxLevel;
+
+            }
+            else
+            {
+                upgradeText.text = "Not enough money!";
             }
         }
+        else if (technologySelected)
+        {
+            if (technologyCost <= money.GetAmount())
+            {
+                //Apply upgrades
+                //Adjust values
+                technologyLevel++;
+                money.AddAmount(-technologyCost);
+                technologyCost *= 2;
+                //Check if the level is maxed out
+                if (technologyLevel >= maxLevel)
+                {
+                    technologyButton.gameObject.SetActive(false);
+                }
+                upgradeText.text = "Upgrade purchased!";
+                //Update the scrollbar size
+                technologyScrollbar.size = (float)technologyLevel / maxLevel;
+            }
+            else
+            {
+                upgradeText.text = "Not enough money!";
+            }
+        }
+        else if (legislationSelected)
+        {
+            if (legislationCost <= money.GetAmount())
+            {
+                //Apply upgrades
+                //Adjust values
+                legislationLevel++;
+                money.AddAmount(-legislationCost);
+                legislationCost *= 2;
+                //Check if the level is maxed out
+                if (legislationLevel >= maxLevel)
+                {
+                    legislationButton.gameObject.SetActive(false);
+                }
+                upgradeText.text = "Upgrade purchased!";
+                //Update the scrollbar size
+                legislationScrollbar.size = (float)legislationLevel / maxLevel;
+            }
+            else
+            {
+                upgradeText.text = "Not enough money!";
+            }
+        }
+
         fundraisingSelected = false;
         technologySelected = false;
         legislationSelected = false;
