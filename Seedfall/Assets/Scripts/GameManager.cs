@@ -71,12 +71,13 @@ public class GameManager : MonoBehaviourPunCallbacks
     public override void OnLeftRoom()
     {
         Debug.Log("Left room, reconnecting to master server"); // ADDED: Debug info
-        PhotonNetwork.ConnectToRegion("");
+        SceneManager.LoadScene("Lobby");
+        //PhotonNetwork.ConnectToRegion("");
     }
 
-    public override void OnConnectedToMaster()
-    {
-        Debug.Log("Reconnected to Master Server, loading Lobby"); // ADDED: Debug info
-        SceneManager.LoadScene("Lobby");
-    }
+    //public override void OnConnectedToMaster()
+    //{
+    //    Debug.Log("Reconnected to Master Server, loading Lobby"); // ADDED: Debug info
+    //    SceneManager.LoadScene("Lobby");
+    //}
 }

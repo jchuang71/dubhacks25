@@ -163,15 +163,15 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinLobby();
     }
 
-    public override void OnJoinedLobby()
-    {
-        Debug.Log("Joined lobby successfully"); // ADDED: Debug info
-                                                // Make sure UI is in the right state when rejoining lobby
-        lobbyPanel.SetActive(true);
-        roomsList.SetActive(true);
-        roomPanel.SetActive(false);
-        leaveButton.SetActive(false);
-    }
+    //public override void OnJoinedLobby()
+    //{
+    //    Debug.Log("Joined lobby successfully"); // ADDED: Debug info
+    //                                            // Make sure UI is in the right state when rejoining lobby
+    //    lobbyPanel.SetActive(true);
+    //    roomsList.SetActive(true);
+    //    roomPanel.SetActive(false);
+    //    leaveButton.SetActive(false);
+    //}
 
     private void UpdatePlayerList()
     {
