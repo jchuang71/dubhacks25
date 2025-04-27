@@ -15,11 +15,12 @@ public class Player : MonoBehaviourPun
     private int playerNumber;
     public Sprite[] idleSprites = new Sprite[7]; // Array to hold the idle sprites
     public Sprite[] walkSprites = new Sprite[6]; // Array to hold the walking sprites
-
+    public Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         playerNumber = PhotonNetwork.LocalPlayer.ActorNumber;
         idleSprites = Resources.LoadAll<Sprite>("Sprites/Player Sprites/Player" + playerNumber + "IdleSprites"); // Folder path under Resources
         walkSprites = Resources.LoadAll<Sprite>("Sprites/Player Sprites/Player" + playerNumber + "WalkSprites"); // Folder path under Resources
@@ -49,22 +50,26 @@ public class Player : MonoBehaviourPun
 
         if(Input.GetKey(KeyCode.W))
         {
-            transform.Translate(new Vector2(0,1) * Time.deltaTime * speed); // Move up
+            //rb.linearVelocity = (new Vector2(0, 1)  * speed);
+            transform.Translate(new Vector2(0, 1) * Time.deltaTime * speed); // Move up
             SetSpriteToWalk(); // Set the sprite to walking animation
         }
         if(Input.GetKey(KeyCode.A))
         {
+            //rb.linearVelocity = (new Vector2(-1,0) * Time.deltaTime * speed); // Move left
             transform.Translate(new Vector2(-1,0) * Time.deltaTime * speed); // Move left
             SetSpriteToWalk(); // Set the sprite to walking animation
             gameObject.GetComponent<SpriteRenderer>().flipX = true; // Flip the sprite to face left
         }
         if(Input.GetKey(KeyCode.S))
         {
+            //rb.linearVelocity = (new Vector2(0,-1) * Time.deltaTime * speed); // Move down
             transform.Translate(new Vector2(0,-1) * Time.deltaTime * speed); // Move down
             SetSpriteToWalk(); // Set the sprite to walking animation
         }
         if(Input.GetKey(KeyCode.D))
         {
+            //rb.linearVelocity = (new Vector2(1,0) * Time.deltaTime * speed); // Move right
             transform.Translate(new Vector2(1,0) * Time.deltaTime * speed); // Move right
             SetSpriteToWalk(); // Set the sprite to walking animation
             gameObject.GetComponent<SpriteRenderer>().flipX = false; // Flip the sprite to face right

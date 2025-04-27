@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.Instantiate("Prefabs/Player", new Vector3(0, 0, -1), Quaternion.identity, 0); // Instantiate the player prefab at the origin with no rotation
 
-        highTilesToWin = Mathf.RoundToInt(vegetationArea.tiles.Count * 0.6f);
+        highTilesToWin = Mathf.RoundToInt(vegetationArea.tiles.Count * 0.5f);
         deforestedTilesToLose = Mathf.RoundToInt(vegetationArea.tiles.Count * 0.8f);
 
         goalText.text = "Goal: " + highTilesToWin;

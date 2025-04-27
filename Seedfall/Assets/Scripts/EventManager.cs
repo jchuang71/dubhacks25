@@ -37,7 +37,6 @@ public class EventManager : MonoBehaviour
             int randomEventIndex = UnityEngine.Random.Range(0, eventList.events.Count - 1);
             EventData currentEvent = eventList.events[randomEventIndex];
             
-            Debug.Log(currentEvent.title);
             AdjustPollution(currentEvent);
             AdjustMoney(currentEvent);
             DeforestTiles(currentEvent);

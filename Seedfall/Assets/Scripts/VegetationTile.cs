@@ -66,6 +66,16 @@ public class VegetationTile : MonoBehaviour
 
             StartCoroutine(AffectMoney());
         }
+        else if(currentState.stateName == "Low")
+        {
+            isProducingMoney = true;
+            if(prevState != null && prevState.stateName == "Deforested")
+            {
+                deforestedTiles--;
+                GameManager.ManagerInstance.tilesTextPanel.transform.Find("DeforestedText").GetComponent<TextMeshProUGUI>().text = "Deforested Tiles: " + deforestedTiles;
+            }
+            StartCoroutine(AffectMoney());
+        }
         else
         {
             isProducingMoney = true;
