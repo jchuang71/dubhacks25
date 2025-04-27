@@ -1,14 +1,15 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
+using System.Collections;
+using Unity.Mathematics;
 
 public class EventManager : MonoBehaviour
 {
     [SerializeField] private EventDataList eventList;
-    [SerializeField] private string jsonPath;
-    
+    [SerializeField] private float randomEventIntervalMin;
+    [SerializeField] private float randomEventIntervalMax;
+
+    private bool eventsEnabled;
     void Start()
     {
         TextAsset jsonText = Resources.Load<TextAsset>("events");
@@ -16,6 +17,8 @@ public class EventManager : MonoBehaviour
         if(jsonText != null) 
         {
             eventList = JsonUtility.FromJson<EventDataList>(jsonText.text);
+            eventsEnabled = true;
+            StartCoroutine(RandomEvents());
         }
     }
 
@@ -23,5 +26,22 @@ public class EventManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    IEnumerator RandomEvents() 
+    {
+        while(eventsEnabled)
+        {
+            float randomTime = UnityEngine.Random.Range(randomEventIntervalMin, randomEventIntervalMax);
+            yield return new WaitForSeconds(randomTime);
+            int randomEventIndex = UnityEngine.Random.Range(0, eventList.events.Count - 1);
+            EventData currentEvent = eventList.events[2];
+            
+            float pollution = GameManager.ManagerInstance.pollutionInterval;
+            pollution = pollution - (pollution * currentEvent.pollution / 100);
+            GameManager.ManagerInstance.pollutionInterval = pollution;
+            GameManager.ManagerInstance.GetComponent<Money>().AddAmount(currentEvent.money);
+
+        }
     }
 }

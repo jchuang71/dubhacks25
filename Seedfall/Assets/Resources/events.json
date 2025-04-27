@@ -21,7 +21,7 @@
             "title": "Popular Online Celebrity Donates To Conservation Efforts",
             "text": "A famous YouTuber known for annual charity events raised thousands of dollars for a conservation group who aim to restore a South American rainforest.",
             "pollution": 0,
-            "money": 100,
+            "money": 1000,
             "deforest": 0
         },
         {
@@ -69,7 +69,6 @@
             "eventId": 9,
             "title": "Worldwide Recession Decreases Manufacturing!",
             "text": "With the stock market's collapse this past Monday, the amount of spending dropped significantly around the world, impacting manufacturing.",
-            "effect": "Pollution levels decrease by 25%, but lose 50% of your Green Points.",
             "pollution": 25,
             "money": -1000,
             "deforest": 0

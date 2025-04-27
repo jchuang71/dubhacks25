@@ -321,8 +321,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventList:
-    list: []
-  jsonPath: Assets/Resources/events.json
+    events: []
+  randomEventIntervalMin: 2
+  randomEventIntervalMax: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

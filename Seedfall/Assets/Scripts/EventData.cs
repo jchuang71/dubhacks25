@@ -9,6 +9,9 @@ public class EventData
     public string title;
     public string text;
     public string effect;
+    public float pollution;
+    public float money;
+    public int deforest;
 }
 
 [Serializable]
