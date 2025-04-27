@@ -55,7 +55,7 @@ public class EventManager : MonoBehaviour
     void AdjustPollution(EventData ev) 
     {
         float pollution = GameManager.ManagerInstance.pollutionInterval;
-        pollution = pollution - (pollution * ev.pollution / 100);
+        pollution = pollution - (pollution * ev.pollution / 200);
         GameManager.ManagerInstance.pollutionInterval = pollution;
     }
 

@@ -753,6 +753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950902eeeba3142df99809c411f31cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  passiveIncomeInterval: 0
+  passiveIncomeAmount: 0
   moneyText: {fileID: 835775032}
   amount: 0
 --- !u!114 &386830608
@@ -785,6 +787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bannerObject: {fileID: 651708377}
   displayTime: 2
+  fadeTime: 1
 --- !u!1 &401574963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,11 +2143,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1081595029}
   - {fileID: 835775031}
-  - {fileID: 1356485884}
-  - {fileID: 1075082490}
   - {fileID: 651708378}
+  - {fileID: 1081595029}
+  - {fileID: 1075082490}
+  - {fileID: 1356485884}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2368,7 +2371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.4117647}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2837,51 +2840,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217058146}
   m_CullTransparentMesh: 1
---- !u!1 &1270600732
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1270600734}
-  - component: {fileID: 1270600733}
-  m_Layer: 0
-  m_Name: TempPlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1270600733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270600732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d5edd2728ba004a90c52bba3c37ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateName: Deforested
---- !u!4 &1270600734
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270600732}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1284733564
 GameObject:
   m_ObjectHideFlags: 0
@@ -3628,9 +3586,9 @@ MonoBehaviour:
   fundraisingButton: {fileID: 513095222}
   technologyButton: {fileID: 1373589213}
   legislationButton: {fileID: 1217058148}
-  fundraisingCost: 1000
-  technologyCost: 1000
-  legislationCost: 1000
+  fundraisingCost: 500
+  technologyCost: 500
+  legislationCost: 500
   fundraisingCostText: {fileID: 1660817610}
   technologyCostText: {fileID: 245499436}
   legislationCostText: {fileID: 979284263}
@@ -4284,7 +4242,6 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 386830606}
   - {fileID: 269452295}
-  - {fileID: 1270600734}
   - {fileID: 1642986602}
   - {fileID: 1010635316}
   - {fileID: 379596989}

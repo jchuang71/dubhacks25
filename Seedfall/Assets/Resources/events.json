@@ -1,11 +1,11 @@
 {
     "events": [
       {
-        "type": "bad",
+        "type": "good",
         "eventId": 1,
         "title": "Youth Boycotts Slow Furniture Production",
         "effect": "Decrease pollution levels by 15%",
-        "pollution": 15,
+        "pollution": -15,
         "money": 0,
         "deforest": 0
       },

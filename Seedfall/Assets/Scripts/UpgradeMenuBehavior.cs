@@ -57,6 +57,7 @@ public class UpgradeMenuBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        money = GameManager.ManagerInstance.gameObject.GetComponent<Money>();
         fundraisingCostText.text = '$' + fundraisingCost.ToString();
         technologyCostText.text = '$' + technologyCost.ToString();
         legislationCostText.text = '$' + legislationCost.ToString();
@@ -83,7 +84,7 @@ public class UpgradeMenuBehavior : MonoBehaviour
 
         //Update the upgrade text to show the selected upgrade
 
-        upgradeText.text = "Increase money generation by " + (fundraisingLevel + 1) * 20 + "%";
+        upgradeText.text = "Increase passive income by " + (fundraisingLevel + 1) * 50;
     }
 
     public void SelectTechnology()
@@ -128,6 +129,10 @@ public class UpgradeMenuBehavior : MonoBehaviour
                 //Update the scrollbar size
                 fundraisingScrollbar.size = (float)fundraisingLevel / maxLevel;
 
+                // Set money passive income
+                money.passiveIncomeInterval -= 2;
+                money.passiveIncomeAmount = (fundraisingLevel * 50);
+                money.EarnPassively();
             }
             else
             {
