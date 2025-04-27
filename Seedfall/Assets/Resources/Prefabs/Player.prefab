@@ -111,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6d985337b18d340929274f18defc28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vegetationArea: {fileID: 0}
   tileStandingOn: {fileID: 0}
   currentSprite: 0
   idleSprites:

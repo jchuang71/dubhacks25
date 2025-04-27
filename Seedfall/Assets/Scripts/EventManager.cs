@@ -41,6 +41,8 @@ public class EventManager : MonoBehaviour
             AdjustPollution(currentEvent);
             AdjustMoney(currentEvent);
             DeforestTiles(currentEvent);
+
+            GameManager.ManagerInstance.GetComponent<BannerNotification>().ShowBanner(currentEvent.title + "\n" + currentEvent.text);
         }
     }
 
