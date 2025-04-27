@@ -22,7 +22,7 @@ public class VegetationTile : MonoBehaviour
     public void ChangeState(string stateName)
     {
         currentState = possibleStates[FindStateIndex(stateName)];
-        Sprite randomSprite = currentState.stateSprites[Random.Range(0, currentState.stateSprites.Count - 1)];
+        Sprite randomSprite = currentState.stateSprites[Random.Range(0, currentState.stateSprites.Count)];
         GetComponent<SpriteRenderer>().sprite = randomSprite;
 
         if (currentState.stateName == "Deforested")

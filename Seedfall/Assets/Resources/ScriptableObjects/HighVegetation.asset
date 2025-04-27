@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: High
   stateSprites:
-  - {fileID: 21300000, guid: 4ddea0194dd079e4b912a232d1f4810e, type: 3}
+  - {fileID: -3178087586806511836, guid: f8065bb7b5515964caac622120d32f7c, type: 3}
+  stateSprite: {fileID: 0}
   moneyCostToUpgrade: 0
   moneyAmountEffect: 1
   affectMoneyInterval: 3
