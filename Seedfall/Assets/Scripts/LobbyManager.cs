@@ -40,7 +40,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         roomsList.SetActive(false);
         roomPanel.SetActive(true);
         leaveButton.SetActive(true);
-        roomName.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name;
+        roomName.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name +
+                         " (" + PhotonNetwork.CurrentRoom.PlayerCount + "/" +
+                         PhotonNetwork.CurrentRoom.MaxPlayers + ")";
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -63,9 +65,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         foreach (RoomInfo room in list)
         {
-            RoomItem newRoom = Instantiate(roomItemPrefab, contentObject);
-            newRoom.SetRoomName(room.Name);
-            roomItemsList.Add(newRoom);
+            if (!room.RemovedFromList)
+            {
+                RoomItem newRoom = Instantiate(roomItemPrefab, contentObject);
+                newRoom.SetRoomInfo(room.Name, room.PlayerCount, room.MaxPlayers);
+                roomItemsList.Add(newRoom);
+            }
         }
     }
 
@@ -86,6 +91,21 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         lobbyPanel.SetActive(true);
         roomsList.SetActive(true);
     }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        roomName.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name +
+                         " (" + PhotonNetwork.CurrentRoom.PlayerCount + "/" +
+                         PhotonNetwork.CurrentRoom.MaxPlayers + ")";
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        roomName.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name +
+                         " (" + PhotonNetwork.CurrentRoom.PlayerCount + "/" +
+                         PhotonNetwork.CurrentRoom.MaxPlayers + ")";
+    }
+
 
     public override void OnConnectedToMaster()
     {
