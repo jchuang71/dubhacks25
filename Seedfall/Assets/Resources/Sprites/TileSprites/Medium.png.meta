@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 575f60ed49a51674c88b33b5ce86396d
+guid: e93107bda50483945b44d09fe3cb0591
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9221359010904463581
-    second: Player 1 jump_0
-  - first:
-      213: -2305572572991157429
-    second: Player 1 jump_1
-  - first:
-      213: 7771079399007008612
-    second: Player 1 jump_2
-  - first:
-      213: -1771648943637781673
-    second: Player 1 jump_3
-  - first:
-      213: -8165721711589885072
-    second: Player 1 jump_4
+      213: -8992919794962309687
+    second: Medium_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -134,118 +122,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player 1 jump_0
+      name: Medium_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 47
-        width: 13
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32721b026d6270080800000000000000
-      internalID: -9221359010904463581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player 1 jump_1
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 48
-        width: 14
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b4b8af6d5f5f000e0800000000000000
-      internalID: -2305572572991157429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player 1 jump_2
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 25
-        width: 17
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4673b2b5a8b68db60800000000000000
-      internalID: 7771079399007008612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player 1 jump_3
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 23
-        width: 14
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 75326cf1ca6d967e0800000000000000
-      internalID: -1771648943637781673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player 1 jump_4
-      rect:
-        serializedVersion: 2
-        x: 5
+        x: 0
         y: 0
-        width: 13
-        height: 20
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07b7dfdfd578dae80800000000000000
-      internalID: -8165721711589885072
+      spriteID: 9cd51bfc71bb23380800000000000000
+      internalID: -8992919794962309687
       vertices: []
       indices: 
       edges: []
@@ -274,11 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Player 1 jump_0: -9221359010904463581
-      Player 1 jump_1: -2305572572991157429
-      Player 1 jump_2: 7771079399007008612
-      Player 1 jump_3: -1771648943637781673
-      Player 1 jump_4: -8165721711589885072
+      Medium_0: -8992919794962309687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

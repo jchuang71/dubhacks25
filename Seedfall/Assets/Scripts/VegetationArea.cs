@@ -6,8 +6,8 @@ public class VegetationArea : MonoBehaviour
     public List<GameObject> tiles;
 
     [SerializeField] private GameObject tilePrefab;
-    [SerializeField] private int areaWidth = 5;
-    [SerializeField] private int areaHeight = 5;
+    public int areaWidth = 20;
+    public int areaHeight = 20;
     [SerializeField] private int cellSize = 1;
 
     private Camera cam;
