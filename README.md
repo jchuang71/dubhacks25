@@ -6,6 +6,7 @@ Seedfall is an online multiplayer strategy game centered around battling defores
 This game was built for the 2025 UWBHacks Hackathon.
 
 **Controls**
+
 WASD - Move
 
 E - Reforest
