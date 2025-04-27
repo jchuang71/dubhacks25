@@ -35,6 +35,7 @@ public class EventManager : MonoBehaviour
             float randomTime = UnityEngine.Random.Range(randomEventIntervalMin, randomEventIntervalMax);
             yield return new WaitForSeconds(randomTime);
             int randomEventIndex = UnityEngine.Random.Range(0, eventList.events.Count - 1);
+<<<<<<< HEAD
             EventData currentEvent = eventList.events[randomEventIndex];
             
             Debug.Log(currentEvent.title);
@@ -64,4 +65,15 @@ public class EventManager : MonoBehaviour
                 vArea.tiles[randomTileIndex].GetComponent<VegetationTile>().ChangeState("Deforested");
             }
     }
+=======
+            EventData currentEvent = eventList.events[2];
+            
+            float pollution = GameManager.ManagerInstance.pollutionInterval;
+            pollution = pollution - (pollution * currentEvent.pollution / 100);
+            GameManager.ManagerInstance.pollutionInterval = pollution;
+            GameManager.ManagerInstance.GetComponent<Money>().AddAmount(currentEvent.money);
+
+        }
+    }
+>>>>>>> parent of 5bd3f75 (Revert "Merge branch 'main' into joey_upgrademenu")
 }
