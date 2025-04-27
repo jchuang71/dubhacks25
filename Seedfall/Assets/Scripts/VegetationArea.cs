@@ -35,7 +35,6 @@ public class VegetationArea : MonoBehaviour
         {
             if(tile.transform.position.x == objectPos.x && tile.transform.position.y == objectPos.y)
             {
-                Debug.Log(tile.transform.position.x + " " + objectPos.x);
                 return tile;
             }
         }
