@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 386830606}
   - component: {fileID: 386830605}
   - component: {fileID: 386830607}
+  - component: {fileID: 386830608}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -617,6 +618,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyText: {fileID: 835775032}
   amount: 0
+--- !u!114 &386830608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386830604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a8201cb92e44a2d92e9b0085470b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventList:
+    events: []
+  randomEventIntervalMin: 5
+  randomEventIntervalMax: 10
 --- !u!1 &401574963
 GameObject:
   m_ObjectHideFlags: 0
