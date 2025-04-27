@@ -27,4 +27,18 @@ public class Money : MonoBehaviour
     {
         return amount;
     }
+
+    public bool payAmount(float _amount)
+    {
+        if (amount >= _amount)
+        {
+            amount -= _amount;
+            moneyText.text = "Money: " + amount;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
