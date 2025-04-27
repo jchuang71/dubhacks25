@@ -28,7 +28,7 @@ public class Money : MonoBehaviour
         return amount;
     }
 
-    public bool payAmount(float _amount)
+    public bool PayAmount(float _amount)
     {
         if (amount >= _amount)
         {

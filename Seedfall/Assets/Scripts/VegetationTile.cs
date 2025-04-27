@@ -41,7 +41,7 @@ public class VegetationTile : MonoBehaviour
         int currentStateIndex = FindStateIndex(currentState.stateName);
         if (currentState.stateName != "High") 
         {
-            if (GameManager.ManagerInstance.GetComponent<Money>().payAmount(currentState.moneyCostToUpgrade) == false) 
+            if (GameManager.ManagerInstance.GetComponent<Money>().PayAmount(currentState.moneyCostToUpgrade) == false) 
             {
                 Debug.Log("Not enough money to upgrade this tile");
                 return false;

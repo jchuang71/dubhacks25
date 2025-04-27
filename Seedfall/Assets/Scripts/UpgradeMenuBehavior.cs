@@ -117,7 +117,7 @@ public class UpgradeMenuBehavior : MonoBehaviour
                 //Apply upgrades
                 //Adjust values
                 fundraisingLevel++;
-                money.AddAmount(-fundraisingCost);
+                money.PayAmount(fundraisingCost);
                 fundraisingCost *= 2;
                 //Check if the level is maxed out
                 if (fundraisingLevel >= maxLevel)
@@ -141,7 +141,7 @@ public class UpgradeMenuBehavior : MonoBehaviour
                 //Apply upgrades
                 //Adjust values
                 technologyLevel++;
-                money.AddAmount(-technologyCost);
+                money.PayAmount(technologyCost);
                 technologyCost *= 2;
                 //Check if the level is maxed out
                 if (technologyLevel >= maxLevel)
@@ -164,7 +164,7 @@ public class UpgradeMenuBehavior : MonoBehaviour
                 //Apply upgrades
                 //Adjust values
                 legislationLevel++;
-                money.AddAmount(-legislationCost);
+                money.PayAmount(legislationCost);
                 legislationCost *= 2;
                 //Check if the level is maxed out
                 if (legislationLevel >= maxLevel)
