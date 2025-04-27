@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/LobbyScene.unity
     guid: 3e47cda068ae93a41b25c0d37950e7e1
   - enabled: 1
-    path: Assets/Scenes/Main.unity
+    path: Assets/Scenes/Main_backup.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: c3d108b7dfc5e5040a76e21e9a857aff
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
