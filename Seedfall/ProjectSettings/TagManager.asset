@@ -12,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - MenuBackground
+  - 
   - 
   - 
   - 
@@ -44,4 +44,3 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
-  - MenuBackground
