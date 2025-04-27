@@ -7,22 +7,6 @@ public class Player : MonoBehaviourPun
     float speed = 5f; // Speed of the player movement
     public VegetationArea vegetationArea; // Reference to the VegetationArea script
     public GameObject tileStandingOn; // Reference to the tile the player is standing on
-    public int currentSprite = 0; // Index of the current sprite
-    private bool isWalking = false; // Flag to check if the player is walking
-    private float timeToCycleSprite = 0.1f; // Time interval to change the sprite
-    private float timeSinceLastSpriteChange = 0f; // Time since the last sprite change
-    private int playerNumber;
-    public Sprite[] idleSprites = new Sprite[7]; // Array to hold the idle sprites
-    public Sprite[] walkSprites = new Sprite[6]; // Array to hold the walking sprites
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        playerNumber = PhotonNetwork.LocalPlayer.ActorNumber;
-        idleSprites = Resources.LoadAll<Sprite>("Sprites/Player Sprites/Player" + playerNumber + "IdleSprites"); // Folder path under Resources
-        walkSprites = Resources.LoadAll<Sprite>("Sprites/Player Sprites/Player" + playerNumber + "WalkSprites"); // Folder path under Resources
-    }
 
     // Update is called once per frame
     void Update()
@@ -53,6 +37,10 @@ public class Player : MonoBehaviourPun
         {
             transform.Translate(new Vector2(1,0) * Time.deltaTime * speed); // Move right
         }
+        else if(Input.GetKeyDown(KeyCode.M))
+        {
+            GameObject.Find("UpgradeMenuManager").GetComponent<UpgradeMenuBehavior>().ToggleMenu(); // Toggle the upgrade menu
+        }    
     }
 
     void PlayerMendForest()
